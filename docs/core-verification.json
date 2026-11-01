@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "version": "0.1.1",
+  "tests": 20,
+  "failures": 0,
+  "command": "node --test tests/manifest.test.cjs",
+  "appSha256": "7a17e0c3cb3fd4c021a2e76499c65c9a660a86af9ff460abd537ed8cabd69323",
+  "scope": "Original core and actual CLI regression tests; bounded descriptor reads, per-role declared/actual budgets, byte identities, strict JSON and independent anchors; no AI model turn executed"
+}

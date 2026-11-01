@@ -1,5 +1,6 @@
 {
   "passed": true,
+  "appSha256": "7a17e0c3cb3fd4c021a2e76499c65c9a660a86af9ff460abd537ed8cabd69323",
   "checks": [
     "controlled fixture differences",
     "independent anchor refusal",
@@ -8,9 +9,14 @@
     "late verification cannot restore stale state",
     "HTML filenames inert",
     "duplicate JSON rejected",
+    "same-SHA byte-length changes are visible",
+    "array-valued hashes rejected",
+    "both roles enforce100-file limits",
+    "both roles enforce32MB declared budgets",
     "mobile layout fits",
     "documentation image loaded",
     "no browser exceptions"
   ],
-  "scope": "Actual browser workbench behavior; no AI model task executed"
+  "scope": "Actual browser workbench behavior; no AI model task executed",
+  "version": "0.1.1"
 }

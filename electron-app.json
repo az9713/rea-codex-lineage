@@ -1,1 +1,21 @@
-{"name":"Task Lineage Workbench","executable":"TaskLineageWorkbench","version":"0.1.0","entry":"app.html","testSelector":"#demo","docs_files":["app.html","app.js","strict-json.js","demo-a.json","demo-b.json","index.html","app-server-verification.json","screenshots/revisions.png"]}
+{
+  "name": "Task Lineage Workbench",
+  "executable": "TaskLineageWorkbench",
+  "version": "0.1.1",
+  "entry": "app.html",
+  "testSelector": "#demo",
+  "docs_files": [
+    "app.html",
+    "app.js",
+    "strict-json.js",
+    "demo-a.json",
+    "demo-b.json",
+    "index.html",
+    "app-server-verification.json",
+    "core-verification.json",
+    "browser-verification.json",
+    "desktop-verification.json",
+    "screenshots/revisions.png"
+  ],
+  "output_directory": "TaskLineageWorkbench-v011-win-x64"
+}

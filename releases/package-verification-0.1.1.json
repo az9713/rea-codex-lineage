@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "version": "0.1.1",
+  "zip_crc": true,
+  "source_files_match": true,
+  "desktop_renderer_matches_source": true,
+  "launcher_matches_source": true,
+  "runtime_licenses_retained": true,
+  "privacy_workspace_marker_hits": 0,
+  "pe_files_scanned": 7,
+  "archive_entries_scanned": 137,
+  "assets": [
+    {
+      "path": "releases/TaskLineageWorkbench-0.1.1-win-x64.zip",
+      "bytes": 158207961,
+      "sha256": "8b9abc86eb28be15e08a6344091dcaa493c52d1d47911f19a109ae9ce973e077"
+    },
+    {
+      "path": "releases/codex-lineage-source-0.1.1.zip",
+      "bytes": 125707,
+      "sha256": "f513a2ae0f1b3c721736042e1e8468717ffca971a57c1184453a8ae892817e5d"
+    },
+    {
+      "path": "releases/codex-lineage-web-0.1.1.zip",
+      "bytes": 96737,
+      "sha256": "290c9ac3143184f80718cd2665ca2de08286c3e107809a187752b7202f372f4f"
+    }
+  ],
+  "extracted_executable_smoke_passed": true,
+  "extracted_source_cli_compare_passed": true,
+  "extracted_source_cli_verify_passed": true,
+  "local_user_prefix_scan_passed": true,
+  "standalone_versioned_source_folder_regression_passed": true
+}

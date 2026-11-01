@@ -20,7 +20,7 @@ def within(p,base):
 
 def main():
  standalone=(ROOT/'electron-app.json').is_file()
- slug=ROOT.name if standalone else sys.argv[1]
+ slug=json.loads((ROOT/'package.json').read_text(encoding='utf-8-sig'))['name'] if standalone else sys.argv[1]
  if not re.fullmatch('[a-z0-9-]+',slug):raise ValueError('Invalid project slug')
  project=ROOT if standalone else within(ROOT/'projects'/slug,ROOT/'projects')
  config=json.loads((project/'electron-app.json').read_text(encoding='utf-8-sig'))
@@ -32,7 +32,11 @@ def main():
  if not re.fullmatch('[A-Za-z0-9_-]+',name):raise ValueError('Invalid executable name')
  runtime=ROOT/'node_modules/electron/dist' if standalone else ROOT/'.runtime/electron-harness/node_modules/electron/dist'
  if not (runtime/'electron.exe').is_file():raise ValueError('Portable Electron45.2.1 runtime required')
- output=project/'releases'/f'{name}-win-x64'
+ version=config.get('version','0.1.0')
+ if not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+',version):raise ValueError('Invalid package version')
+ output_name=config.get('output_directory',f'{name}-win-x64')
+ if not re.fullmatch('[A-Za-z0-9_-]+',output_name):raise ValueError('Invalid output directory')
+ output=project/'releases'/output_name
  if output.exists():
   # Never recursively delete prior output; update explicitly from trusted inputs.
   raise ValueError('Package output exists; choose a new package build directory or review it explicitly')
@@ -63,7 +67,7 @@ def main():
   shutil.copyfile(launcher,project/'scripts/electron-main.cjs')
   shutil.copyfile(Path(__file__),project/'scripts/package-desktop.py')
  (output/'HOST-VERSION.txt').write_text('Electron45.2.1 win32-x64; original project renderer; see included Electron/Chromium licenses.\n',encoding='utf-8')
- archive=project/'releases'/f'{name}-0.1.0-win-x64.zip'
+ archive=project/'releases'/f'{name}-{version}-win-x64.zip'
  with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
   for file in sorted(output.rglob('*')):
    within(file,output)

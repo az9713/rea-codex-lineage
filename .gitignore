@@ -1,6 +1,10 @@
 node_modules/
 .runtime/
-investigation/*.private.json
+investigation/
 fixtures/runs/
+.test-build/
+handoff*.json
+publication.json
 releases/*-win-x64/
 releases/*.zip
+__pycache__/

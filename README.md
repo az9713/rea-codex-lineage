@@ -2,7 +2,7 @@
 
 **A task changed an output. Which declared inputs changed with it?** Capture exact source/artifact bytes, compare revisions, and keep snapshots, controlled reruns and unobserved cloud work visibly distinct.
 
-[Try the live workbench](https://az9713.github.io/rea-codex-lineage/app.html) · [Guide](https://az9713.github.io/rea-codex-lineage/) · [Windows and source packages](https://github.com/az9713/rea-codex-lineage/releases)
+[Try the live workbench](https://az9713.github.io/rea-codex-lineage/app.html) · [Guide](https://az9713.github.io/rea-codex-lineage/) · [Windows and source packages](https://github.com/az9713/rea-codex-lineage/releases/tag/v0.1.1)
 
 ## Before and after
 
@@ -15,11 +15,19 @@
 
 ![Controlled revision comparison](docs/screenshots/revisions.png)
 
+## Version 0.1.1: verification you can audit
+
+This patch fixes review findings in the independent workbench. Comparisons now include **both hash and byte length**, so contradictory length metadata cannot be labeled unchanged. CLI manifest files are size-checked from an open descriptor before a buffer is allocated. Imported source/artifact lists each enforce 100 files and 32 MB; verification also shares an actual read budget across changed files rather than trusting their declared sizes. Browser hash fields must be strings with the same schema as the core.
+
+**20 core/actual CLI tests and 14 real Chromium checks passed.** These include allocation/read instrumentation, exact boundary acceptance, actual CLI rejection on both comparison inputs, real browser metadata-change display and malformed/over-budget manifest refusal. The Windows executable is separately smoke-tested after ZIP extraction; that checks renderer loading and isolation, while browser/core tests establish the application behavior. See the [core](docs/core-verification.json), [browser](docs/browser-verification.json), and [desktop](docs/desktop-verification.json) evidence. No AI/model task was executed by those checks.
+
 ## Run
 
 The Windows ZIP includes `TaskLineageWorkbench.exe` and its Electron runtime. Extract and run it from a writable directory. It processes selected manifests/files locally; profile data stays beside the executable. The browser version works on GitHub Pages or a local HTTP server. No model subscription is needed for the viewer.
 
 The example manifests come from two real executions of the included deterministic fixture, with one input factor changed. They are not records of an AI model turn.
+
+The web ZIP contains `docs/`; serve that directory over HTTP (for example `python -m http.server 8000` from `docs/`) or use GitHub Pages. The controlled examples use fetch; direct `file://` example loading is not claimed. The source ZIP contains all original code, tests, fixtures, docs, lockfile, CI and packaging scripts. Verify archives with `SHA256SUMS-0.1.1.txt` and `package-verification-0.1.1.json`. Historical0.1.0 archives remain unchanged.
 
 ## Capture your own revision
 
@@ -52,9 +60,10 @@ The desktop viewer is an independent implementation. It is not a modified Codex 
 ```sh
 node --test tests/manifest.test.cjs
 node scripts/build.cjs
+node scripts/browser-test.cjs
 ```
 
-Windows desktop build: install pinned Electron45.2.1 in this checkout with a local cache, then `python scripts/package-desktop.py`. The public npm lock pins tool dependencies; avoid installing from an uninitialized ancestor directory. On PowerShell set `ELECTRON_CACHE` and `npm_config_cache` to checkout-contained `.runtime` subdirectories and use an explicit absolute `--prefix` for installation.
+Windows desktop build: install pinned Electron45.2.1 in this checkout with a local cache, then `python scripts/package-desktop.py`. Run `python scripts/release.py` to create the versioned Windows/web/corresponding-source archives and receipts. The helper refuses an existing output directory; select a fresh `output_directory` in `electron-app.json` for a deliberate new build. The public npm lock pins tool dependencies; avoid installing from an uninitialized ancestor directory. On PowerShell set `ELECTRON_CACHE` and `npm_config_cache` to checkout-contained `.runtime` subdirectories and use an explicit absolute `--prefix` for installation.
 
 Core/actual CLI-process tests, Chromium behavior tests, real App Server diagnostics and packaged renderer/isolation smoke have separate reports. A passing checksum is not authentication; retain an expected digest independently. Equal file hashes establish byte equality, not model use, environment equivalence or scientific correctness.
 

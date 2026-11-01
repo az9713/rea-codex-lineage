@@ -1,1 +1,15 @@
-{"passed":true,"app":"Task Lineage Workbench","renderer":{"title":"Task Lineage Workbench","heading":"Task Lineage Workbench","node":"undefined","selector":true},"scope":"Packaged renderer load and isolation smoke; app-specific core/browser tests separate"}
+{
+  "passed": true,
+  "app": "Task Lineage Workbench",
+  "renderer": {
+    "title": "Task Lineage Workbench",
+    "heading": "Task Lineage Workbench",
+    "node": "undefined",
+    "selector": true
+  },
+  "scope": "Actual fresh packaged and extracted renderer load/isolation smoke. Core20/browser14 checks establish independent workbench behavior separately; no native Codex desktop/AI task test.",
+  "version": "0.1.1",
+  "nativeCodexDesktopVerified": false,
+  "extractedWindowsExecutableSmokePassed": true,
+  "host": "Electron45.2.1 win32-x64"
+}
