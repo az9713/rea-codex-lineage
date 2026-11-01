@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "zip_crc": true,
+  "desktop_renderer_matches_source": true,
+  "runtime_licenses_retained": true,
+  "source_files_match": true,
+  "assets": [
+    {
+      "path": "releases/TaskLineageWorkbench-0.1.0-win-x64.zip",
+      "bytes": 158200734,
+      "sha256": "0a4d62479feaa1aa9d1357887a49b873d2510c2a0562aa96934f3cc3187a541e"
+    },
+    {
+      "path": "releases/codex-lineage-source-0.1.0.zip",
+      "bytes": 115098,
+      "sha256": "cbe67ee6ba49ade14a6cd155c0931e7605c141cda033790b170e61d8126b0a43"
+    },
+    {
+      "path": "releases/codex-lineage-web-0.1.0.zip",
+      "bytes": 91808,
+      "sha256": "b6cc10e6e7ff273ef1dcb9c025e8c5a5ab438cd026dd9ba8100a7341a3201d02"
+    }
+  ]
+}

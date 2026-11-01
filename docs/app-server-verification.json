@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cliPackage": "0.166.0",
+  "methods": [
+    "remoteControl/status/changed",
+    "initialize:response",
+    "thread/list:response"
+  ],
+  "scope": "Real local initialize/thread-list diagnostics only. No model turn, approval or cloud task executed.",
+  "authentication": "ephemeral; child home/profile/temp inside checkout; no model turn or login"
+}

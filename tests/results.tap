@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: capture verifies exact source/artifact hashes without absolute paths
+ok 1 - capture verifies exact source/artifact hashes without absolute paths
+  ---
+  duration_ms: 11.9309
+  type: 'test'
+  ...
+# Subtest: source and output changes are distinct and no causality is inferred
+ok 2 - source and output changes are distinct and no causality is inferred
+  ---
+  duration_ms: 12.249
+  type: 'test'
+  ...
+# Subtest: different project namespaces refuse comparison
+ok 3 - different project namespaces refuse comparison
+  ---
+  duration_ms: 7.3473
+  type: 'test'
+  ...
+# Subtest: tampered bytes and malformed digests reject
+ok 4 - tampered bytes and malformed digests reject
+  ---
+  duration_ms: 5.6826
+  type: 'test'
+  ...
+# Subtest: unknown cloud/interrupted state remains explicit
+ok 5 - unknown cloud/interrupted state remains explicit
+  ---
+  duration_ms: 4.0151
+  type: 'test'
+  ...
+# Subtest: unsafe paths and case-ambiguous identities reject
+ok 6 - unsafe paths and case-ambiguous identities reject
+  ---
+  duration_ms: 6.7895
+  type: 'test'
+  ...
+# Subtest: oversized manifests and resource counts reject
+ok 7 - oversized manifests and resource counts reject
+  ---
+  duration_ms: 7.5552
+  type: 'test'
+  ...
+# Subtest: missing artifact is unavailable, not silently unchanged
+ok 8 - missing artifact is unavailable, not silently unchanged
+  ---
+  duration_ms: 7.4832
+  type: 'test'
+  ...
+# Subtest: actual CLI fresh-process snapshot and verify run
+ok 9 - actual CLI fresh-process snapshot and verify run
+  ---
+  duration_ms: 3958.1404
+  type: 'test'
+  ...
+# Subtest: canonical ordering is stable and inherited/prototype values are not accepted
+ok 10 - canonical ordering is stable and inherited/prototype values are not accepted
+  ---
+  duration_ms: 0.8183
+  type: 'test'
+  ...
+# Subtest: strict JSON rejects duplicate escaped keys and lossy numbers
+ok 11 - strict JSON rejects duplicate escaped keys and lossy numbers
+  ---
+  duration_ms: 1.2794
+  type: 'test'
+  ...
+# Subtest: a rewritten manifest cannot match an independently retained digest
+ok 12 - a rewritten manifest cannot match an independently retained digest
+  ---
+  duration_ms: 8.8593
+  type: 'test'
+  ...
+# Subtest: duplicate event IDs and oversized real files reject
+ok 13 - duplicate event IDs and oversized real files reject
+  ---
+  duration_ms: 14.4089
+  type: 'test'
+  ...
+# Subtest: actual CLI refuses a linked output parent
+ok 14 - actual CLI refuses a linked output parent
+  ---
+  duration_ms: 1281.0002
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6692.2557

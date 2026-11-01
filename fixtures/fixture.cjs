@@ -1,0 +1,1 @@
+const fs=require('node:fs'),path=require('node:path');const root=__dirname,input=JSON.parse(fs.readFileSync(path.join(root,'input.json'),'utf8'));if(!Number.isSafeInteger(input.factor)||Math.abs(input.factor)>1000)throw Error('Invalid fixture factor');fs.writeFileSync(path.join(root,'result.json'),JSON.stringify({values:[1,2,3].map(x=>x*input.factor)},null,2));

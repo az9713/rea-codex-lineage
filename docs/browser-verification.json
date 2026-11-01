@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "controlled fixture differences",
+    "independent anchor refusal",
+    "selected artifact verification",
+    "edited manifest invalidates cached state",
+    "late verification cannot restore stale state",
+    "HTML filenames inert",
+    "duplicate JSON rejected",
+    "mobile layout fits",
+    "documentation image loaded",
+    "no browser exceptions"
+  ],
+  "scope": "Actual browser workbench behavior; no AI model task executed"
+}

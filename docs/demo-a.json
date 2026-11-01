@@ -1,0 +1,36 @@
+{
+  "schema": "task-lineage/v1",
+  "project": "synthetic-controlled-fixture",
+  "mode": "controlled-rerun",
+  "state": "completed",
+  "sources": [
+    {
+      "path": "fixtures/input.json",
+      "bytes": 12,
+      "sha256": "82efa4cadfd760a830325f23095d858a8288960861a180431111b7780ca6c0eb"
+    },
+    {
+      "path": "fixtures/fixture.cjs",
+      "bytes": 364,
+      "sha256": "f890e1c2297d12640460e8085bcb905dc0fbacb3a00b3d64f7989d0b36ad165d"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "fixtures/result.json",
+      "bytes": 41,
+      "sha256": "54bf2ae808cbeca68073dc68073989816c0702ce78d8feeb34d43bc1dbc6043f"
+    }
+  ],
+  "events": [
+    {
+      "kind": "local-fixture-process-exit-0",
+      "id": "factor-2"
+    }
+  ],
+  "unknowns": [
+    "Declared input/output relationships do not prove model use or causality.",
+    "Remote operations and environment factors not explicitly captured remain unknown."
+  ],
+  "digest": "aa52739d483200a8415e73cc75575472aa2a23858a4de374cd3e80f1dc058ba6"
+}

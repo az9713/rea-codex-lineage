@@ -1,0 +1,6 @@
+node_modules/
+.runtime/
+investigation/*.private.json
+fixtures/runs/
+releases/*-win-x64/
+releases/*.zip
