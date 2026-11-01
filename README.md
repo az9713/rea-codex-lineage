@@ -1,8 +1,16 @@
 # Task Lineage Workbench for Codex workflows
 
-**A task changed an output. Which declared inputs changed with it?** Capture exact source/artifact bytes, compare revisions, and keep snapshots, controlled reruns and unobserved cloud work visibly distinct.
+Save a record of selected input and output files after a task, then compare it with a later run. The viewer separates changes to the inputs from changes to the results so you can see what needs investigation.
 
-[Try the live workbench](https://az9713.github.io/rea-codex-lineage/app.html) · [Guide](https://az9713.github.io/rea-codex-lineage/) · [Windows and source packages](https://github.com/az9713/rea-codex-lineage/releases/tag/v0.1.1)
+A script, data file or AI-assisted coding task produces a different result, but the conversation and working files have changed since the earlier run. You want a small, checkable record of the files you chose to associate with each result.
+
+**Example:** The sample runs the same small program twice. A multiplier changes from 2 to 3. The viewer shows that the program file stayed the same while the input and output files changed. This is a real local-program example, not a record of an AI model turn.
+
+**What you install:** A separate file-comparison viewer and command-line recorder.
+
+**Current scope:** This is an independent workbench, not a modified Codex desktop app. It records declared file relationships; it cannot prove which files an AI used or why it produced an edit. Automatic AI reruns and cloud-task history are not implemented.
+
+[Live guide](https://az9713.github.io/rea-codex-lineage/) · [Download packages](https://github.com/az9713/rea-codex-lineage/releases/tag/v0.1.1)
 
 ## Before and after
 
