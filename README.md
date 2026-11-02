@@ -12,6 +12,18 @@ A script, data file or AI-assisted coding task produces a different result, but 
 
 [Live guide](https://az9713.github.io/rea-codex-lineage/) · [Download packages](https://github.com/az9713/rea-codex-lineage/releases/tag/v0.1.1)
 
+<!-- rea-release-expectations:start -->
+## What to expect from this release
+
+**Status: experimental.** Read the tested scope and remaining work below before choosing this release for your workflow.
+
+- **What you get:** A standalone file recorder, comparison viewer and command-line tool for Codex-related workflows. The new comparison controls run outside the Codex app.
+- **Verified so far:** File capture and comparison, guarded local fixture reruns, browser/package checks and a limited real Codex App Server diagnostic were executed.
+- **Still needs testing or implementation:** No model-backed Codex task was run as an end-to-end feature test. Automatic capture of task history, automatic AI reruns and cloud-task history are not implemented.
+- **Relationship to the original app:** Installing it does not change Codex or reveal the model's actual inputs. Connecting capture and reruns to real Codex tasks, or placing the viewer inside Codex, would require additional integration work.
+
+<!-- rea-release-expectations:end -->
+
 ## Before and after
 
 | Before | With this workbench |
